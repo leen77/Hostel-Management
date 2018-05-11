@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Allocates">
+    <Key>
+      <PropertyRef Name="room_no" />
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="room_no" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Canteen">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="int" Nullable="false" />
+    <Property Name="item_name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="item_money" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="complaint_id" />
+    </Key>
+    <Property Name="complaint_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="complaint_subject" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="complaint_descrip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="complaint_status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="expense_id" />
+    </Key>
+    <Property Name="expense_id" Type="int" Nullable="false" />
+    <Property Name="expense_descrip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="expense_money" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hostel">
+    <Key>
+      <PropertyRef Name="hostel_id" />
+    </Key>
+    <Property Name="hostel_id" Type="int" Nullable="false" />
+    <Property Name="hostel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="no_of_rooms" Type="int" Nullable="false" />
+    <Property Name="no_of_floors" Type="int" Nullable="false" />
+    <Property Name="no_of_beds" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Laundry">
+    <Key>
+      <PropertyRef Name="laundry_id" />
+    </Key>
+    <Property Name="laundry_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="total_items" Type="int" Nullable="false" />
+    <Property Name="laundry_money" Type="decimal" Precision="5" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="int" Nullable="false" />
+    <Property Name="book_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="book_author" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isbn_no" Type="int" Nullable="false" />
+    <Property Name="units_available" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="secque" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="secans" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessMenu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="int" Nullable="false" />
+    <Property Name="menu" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="payment_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="payment_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Penalty">
+    <Key>
+      <PropertyRef Name="penalty_id" />
+    </Key>
+    <Property Name="penalty_id" Type="int" Nullable="false" />
+    <Property Name="penalty_descrip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="penalty_money" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="role_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="room_no" />
+    </Key>
+    <Property Name="room_no" Type="int" Nullable="false" />
+    <Property Name="room_capacity" Type="int" Nullable="false" />
+    <Property Name="floor" Type="int" Nullable="false" />
+    <Property Name="slots_available" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Takes">
+    <Key>
+      <PropertyRef Name="take_id" />
+    </Key>
+    <Property Name="book_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="issue_date" Type="date" Nullable="false" />
+    <Property Name="due_date" Type="date" Nullable="false" />
+    <Property Name="take_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dob" Type="date" Nullable="false" />
+    <Property Name="mobileno" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="pcode" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="state" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Canteen">
+    <Key>
+      <PropertyRef Name="user_canteen_id" />
+    </Key>
+    <Property Name="user_canteen_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="item_id" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="canteen_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Expense">
+    <Key>
+      <PropertyRef Name="user_expense_id" />
+    </Key>
+    <Property Name="user_expense_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="expense_id" Type="int" Nullable="false" />
+    <Property Name="expense_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Penalty">
+    <Key>
+      <PropertyRef Name="user_penalty_id" />
+    </Key>
+    <Property Name="user_penalty_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="penalty_id" Type="int" Nullable="false" />
+    <Property Name="penalty_date" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_3">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Laundry" Type="Self.Laundry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Laundry">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Allocates_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Allocates" Type="Self.Allocates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Allocates">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Allocates_ToTable_1">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Allocates" Type="Self.Allocates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="room_no" />
+      </Principal>
+      <Dependent Role="Allocates">
+        <PropertyRef Name="room_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_ToTable">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_ToTable_1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Login" Type="Self.Login" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Complaint" Type="Self.Complaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Complaint">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Takes_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Takes" Type="Self.Takes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Takes_ToTable_1">
+    <End Role="Library" Type="Self.Library" Multiplicity="1" />
+    <End Role="Takes" Type="Self.Takes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Library">
+        <PropertyRef Name="book_id" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Canteen_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Canteen" Type="Self.User_Canteen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="User_Canteen">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Canteen_ToTable_1">
+    <End Role="Canteen" Type="Self.Canteen" Multiplicity="1" />
+    <End Role="User_Canteen" Type="Self.User_Canteen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canteen">
+        <PropertyRef Name="item_id" />
+      </Principal>
+      <Dependent Role="User_Canteen">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Expense_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Expense" Type="Self.User_Expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="User_Expense">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Expense_ToTable_1">
+    <End Role="Expense" Type="Self.Expense" Multiplicity="1" />
+    <End Role="User_Expense" Type="Self.User_Expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expense">
+        <PropertyRef Name="expense_id" />
+      </Principal>
+      <Dependent Role="User_Expense">
+        <PropertyRef Name="expense_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Penalty_ToTable">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="User_Penalty" Type="Self.User_Penalty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="User_Penalty">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Penalty_ToTable_1">
+    <End Role="Penalty" Type="Self.Penalty" Multiplicity="1" />
+    <End Role="User_Penalty" Type="Self.User_Penalty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Penalty">
+        <PropertyRef Name="penalty_id" />
+      </Principal>
+      <Dependent Role="User_Penalty">
+        <PropertyRef Name="penalty_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="Allocates" EntityType="Self.Allocates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Canteen" EntityType="Self.Canteen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complaint" EntityType="Self.Complaint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expense" EntityType="Self.Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hostel" EntityType="Self.Hostel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Laundry" EntityType="Self.Laundry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Library" EntityType="Self.Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessMenu" EntityType="Self.MessMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Penalty" EntityType="Self.Penalty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Takes" EntityType="Self.Takes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Canteen" EntityType="Self.User_Canteen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Expense" EntityType="Self.User_Expense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Penalty" EntityType="Self.User_Penalty" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_3" Association="Self.FK_3">
+      <End Role="User" EntitySet="User" />
+      <End Role="Laundry" EntitySet="Laundry" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Allocates_ToTable" Association="Self.FK_Allocates_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="Allocates" EntitySet="Allocates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Allocates_ToTable_1" Association="Self.FK_Allocates_ToTable_1">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Allocates" EntitySet="Allocates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_ToTable" Association="Self.FK_Login_ToTable">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Login" EntitySet="Login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_ToTable_1" Association="Self.FK_Login_ToTable_1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Login" EntitySet="Login" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_ToTable" Association="Self.FK_Payment_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToTable" Association="Self.FK_Table_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="Complaint" EntitySet="Complaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Takes_ToTable" Association="Self.FK_Takes_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="Takes" EntitySet="Takes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Takes_ToTable_1" Association="Self.FK_Takes_ToTable_1">
+      <End Role="Library" EntitySet="Library" />
+      <End Role="Takes" EntitySet="Takes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Canteen_ToTable" Association="Self.FK_User_Canteen_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Canteen" EntitySet="User_Canteen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Canteen_ToTable_1" Association="Self.FK_User_Canteen_ToTable_1">
+      <End Role="Canteen" EntitySet="Canteen" />
+      <End Role="User_Canteen" EntitySet="User_Canteen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Expense_ToTable" Association="Self.FK_User_Expense_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Expense" EntitySet="User_Expense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Expense_ToTable_1" Association="Self.FK_User_Expense_ToTable_1">
+      <End Role="Expense" EntitySet="Expense" />
+      <End Role="User_Expense" EntitySet="User_Expense" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Penalty_ToTable" Association="Self.FK_User_Penalty_ToTable">
+      <End Role="User" EntitySet="User" />
+      <End Role="User_Penalty" EntitySet="User_Penalty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Penalty_ToTable_1" Association="Self.FK_User_Penalty_ToTable_1">
+      <End Role="Penalty" EntitySet="Penalty" />
+      <End Role="User_Penalty" EntitySet="User_Penalty" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

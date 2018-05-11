@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ProjectHMS.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles/Style3.css" rel="stylesheet" type="text/css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="header">
+             <asp:Image ID="Image1" runat="server" ImageUrl="~/DDU.jpg" />
+            <h2>DDU Hostel Management</h2>
+            <hr />
+        </div>
+  
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

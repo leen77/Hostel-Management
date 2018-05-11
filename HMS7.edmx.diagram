@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cbb44a9d40264a41a5bb0e5ef8daecf6" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Database1Model.Allocated" Width="1.5" PointX="6.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Canteen" Width="1.5" PointX="11.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Complaint" Width="1.5" PointX="4.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Expense" Width="1.5" PointX="3.125" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Hostel" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Laundry" Width="1.5" PointX="2.875" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Library" Width="1.5" PointX="9.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.LoginDb" Width="1.5" PointX="15.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.MessMenu" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Notice" Width="1.5" PointX="5.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Payment" Width="1.5" PointX="5.375" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Penalty" Width="1.5" PointX="12.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Role" Width="1.5" PointX="13.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Room" Width="1.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Take" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.User_Canteen" Width="1.5" PointX="10.125" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.UserDb" Width="1.5" PointX="0.5" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK_Allocated_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Allocated_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_User_Canteen_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Complaint_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Expense_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Laundry_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Takes_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_LoginDb_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_LoginDb_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Payment_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Penalty_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_Takes_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK_User_Canteen_ToTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Database1Model.GatePass" Width="1.5" PointX="2.75" PointY="15.125" />
+        <AssociationConnector Association="Database1Model.FK1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

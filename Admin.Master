@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="ProjectHMS.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles/Style1.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 197px;
+        }
+        .auto-style2 {
+            width: 113px;
+        }
+        .auto-style3 {
+            width: 95px;
+        }
+        .auto-style4 {
+            width: 172px;
+        }
+        .auto-style5 {
+            width: 89px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="header">
+             <asp:Image ID="Image1" runat="server" ImageUrl="~/DDU.jpg" />
+            <h2>
+                DDU Hostel Management</h2>
+            <hr />
+        </div>
+
+         <div class="wrapper">
+        <div class="menu">
+            <ul>
+              <li><a href="AdminHome.aspx">&nbsp&nbsp&nbsp&nbsp Home</a></li>
+               <li><a href="ManageUser.aspx">&nbsp&nbsp&nbsp&nbsp Manage UserDetails</a></li>
+                <li><a href="UpdateHostel.aspx">&nbsp&nbsp&nbsp&nbsp Manage HostelDetails</a></li>
+                <li><a href="admingate.aspx">&nbsp&nbsp&nbsp&nbsp Approve GatePass</a></li>
+                <li><a href="Aboutus.aspx">&nbsp&nbsp&nbsp&nbsp About Us
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+                 &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+                </a></li>
+                <li><a href="LogOut.aspx">LogOut</a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        <div class="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+             </div>
+        <div class="clear"></div>
+        <div class="footer">
+           <h2> @Copyright(C) DDU 1990-2017</h2>
+        </div>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities5">
+    <EntitySetMapping Name="Allocateds">
+      <EntityTypeMapping TypeName="Database1Model.Allocated">
+        <MappingFragment StoreEntitySet="Allocated">
+          <ScalarProperty Name="allocated_id" ColumnName="allocated_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="room_no" ColumnName="room_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Canteens">
+      <EntityTypeMapping TypeName="Database1Model.Canteen">
+        <MappingFragment StoreEntitySet="Canteen">
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_money" ColumnName="item_money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="Database1Model.Complaint">
+        <MappingFragment StoreEntitySet="Complaint">
+          <ScalarProperty Name="complaint_id" ColumnName="complaint_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="complaint_subject" ColumnName="complaint_subject" />
+          <ScalarProperty Name="complaint_descrip" ColumnName="complaint_descrip" />
+          <ScalarProperty Name="complaint_status" ColumnName="complaint_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="Database1Model.Expense">
+        <MappingFragment StoreEntitySet="Expense">
+          <ScalarProperty Name="expense_id" ColumnName="expense_id" />
+          <ScalarProperty Name="expense_descrip" ColumnName="expense_descrip" />
+          <ScalarProperty Name="expense_money" ColumnName="expense_money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hostels">
+      <EntityTypeMapping TypeName="Database1Model.Hostel">
+        <MappingFragment StoreEntitySet="Hostel">
+          <ScalarProperty Name="hostel_id" ColumnName="hostel_id" />
+          <ScalarProperty Name="hostel_name" ColumnName="hostel_name" />
+          <ScalarProperty Name="no_of_rooms" ColumnName="no_of_rooms" />
+          <ScalarProperty Name="no_of_floors" ColumnName="no_of_floors" />
+          <ScalarProperty Name="no_of_beds" ColumnName="no_of_beds" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laundries">
+      <EntityTypeMapping TypeName="Database1Model.Laundry">
+        <MappingFragment StoreEntitySet="Laundry">
+          <ScalarProperty Name="laundry_id" ColumnName="laundry_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="total_items" ColumnName="total_items" />
+          <ScalarProperty Name="laundry_money" ColumnName="laundry_money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libraries">
+      <EntityTypeMapping TypeName="Database1Model.Library">
+        <MappingFragment StoreEntitySet="Library">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_author" ColumnName="book_author" />
+          <ScalarProperty Name="isbn_no" ColumnName="isbn_no" />
+          <ScalarProperty Name="units_available" ColumnName="units_available" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="Database1Model.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="secque" ColumnName="secque" />
+          <ScalarProperty Name="secans" ColumnName="secans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessMenus">
+      <EntityTypeMapping TypeName="Database1Model.MessMenu">
+        <MappingFragment StoreEntitySet="MessMenu">
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="menu" ColumnName="menu" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="Database1Model.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penalties">
+      <EntityTypeMapping TypeName="Database1Model.Penalty">
+        <MappingFragment StoreEntitySet="Penalty">
+          <ScalarProperty Name="penalty_id" ColumnName="penalty_id" />
+          <ScalarProperty Name="penalty_descrip" ColumnName="penalty_descrip" />
+          <ScalarProperty Name="penalty_money" ColumnName="penalty_money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Database1Model.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rooms">
+      <EntityTypeMapping TypeName="Database1Model.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="room_no" ColumnName="room_no" />
+          <ScalarProperty Name="room_capacity" ColumnName="room_capacity" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="slots_available" ColumnName="slots_available" />
+          <ScalarProperty Name="room_price" ColumnName="room_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Takes">
+      <EntityTypeMapping TypeName="Database1Model.Take">
+        <MappingFragment StoreEntitySet="Takes">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="due_date" ColumnName="due_date" />
+          <ScalarProperty Name="take_id" ColumnName="take_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Canteen">
+      <EntityTypeMapping TypeName="Database1Model.User_Canteen">
+        <MappingFragment StoreEntitySet="User_Canteen">
+          <ScalarProperty Name="user_canteen_id" ColumnName="user_canteen_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="canteen_date" ColumnName="canteen_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Expense">
+      <EntityTypeMapping TypeName="Database1Model.User_Expense">
+        <MappingFragment StoreEntitySet="User_Expense">
+          <ScalarProperty Name="user_expense_id" ColumnName="user_expense_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="expense_id" ColumnName="expense_id" />
+          <ScalarProperty Name="expense_date" ColumnName="expense_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Penalty">
+      <EntityTypeMapping TypeName="Database1Model.User_Penalty">
+        <MappingFragment StoreEntitySet="User_Penalty">
+          <ScalarProperty Name="user_penalty_id" ColumnName="user_penalty_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="penalty_id" ColumnName="penalty_id" />
+          <ScalarProperty Name="penalty_date" ColumnName="penalty_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDbs">
+      <EntityTypeMapping TypeName="Database1Model.UserDb">
+        <MappingFragment StoreEntitySet="UserDb">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="pcode" ColumnName="pcode" />
+          <ScalarProperty Name="state" ColumnName="state" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Allocated">
+    <Key>
+      <PropertyRef Name="allocated_id" />
+    </Key>
+    <Property Name="allocated_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="room_no" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Allocated_ToTable" FromRole="Allocated" ToRole="UserDb" />
+    <NavigationProperty Name="Room" Relationship="Self.FK_Allocated_ToTable_1" FromRole="Allocated" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="Canteen">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="item_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="item_money" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <NavigationProperty Name="User_Canteen" Relationship="Self.FK_User_Canteen_ToTable_1" FromRole="Canteen" ToRole="User_Canteen" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="complaint_id" />
+    </Key>
+    <Property Name="complaint_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="complaint_subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="complaint_descrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="complaint_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Complaint_ToTable" FromRole="Complaint" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="Expense">
+    <Key>
+      <PropertyRef Name="expense_id" />
+    </Key>
+    <Property Name="expense_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expense_descrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expense_money" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="expense_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Expense_ToTable" FromRole="Expense" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="Hostel">
+    <Key>
+      <PropertyRef Name="hostel_id" />
+    </Key>
+    <Property Name="hostel_id" Type="Int32" Nullable="false" />
+    <Property Name="hostel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="no_of_rooms" Type="Int32" Nullable="false" />
+    <Property Name="no_of_floors" Type="Int32" Nullable="false" />
+    <Property Name="no_of_beds" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Laundry">
+    <Key>
+      <PropertyRef Name="laundry_id" />
+    </Key>
+    <Property Name="laundry_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="total_items" Type="Int32" Nullable="false" />
+    <Property Name="laundry_money" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="laundry_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Laundry_ToTable" FromRole="Laundry" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="Int32" Nullable="false" />
+    <Property Name="book_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="book_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isbn_no" Type="Int32" Nullable="false" />
+    <Property Name="units_available" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Takes" Relationship="Self.FK_Takes_ToTable_1" FromRole="Library" ToRole="Takes" />
+  </EntityType>
+  <EntityType Name="LoginDb">
+    <Key>
+      <PropertyRef Name="login_id" />
+    </Key>
+    <Property Name="login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="secque" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="secans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_LoginDb_ToTable" FromRole="LoginDb" ToRole="Role" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_LoginDb_ToTable_1" FromRole="LoginDb" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="MessMenu">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="Int32" Nullable="false" />
+    <Property Name="menu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payment_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payment_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Payment_ToTable" FromRole="Payment" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="Penalty">
+    <Key>
+      <PropertyRef Name="penalty_id" />
+    </Key>
+    <Property Name="penalty_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="penalty_subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="penalty_descrip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="penalty_money" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="penalty_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Penalty_ToTable" FromRole="Penalty" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LoginDbs" Relationship="Self.FK_LoginDb_ToTable" FromRole="Role" ToRole="LoginDb" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="room_no" />
+    </Key>
+    <Property Name="room_no" Type="Int32" Nullable="false" />
+    <Property Name="room_capacity" Type="Int32" Nullable="false" />
+    <Property Name="floor" Type="Int32" Nullable="false" />
+    <Property Name="slots_available" Type="Int32" Nullable="false" />
+    <Property Name="room_price" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Allocateds" Relationship="Self.FK_Allocated_ToTable_1" FromRole="Room" ToRole="Allocated" />
+  </EntityType>
+  <EntityType Name="Take">
+    <Key>
+      <PropertyRef Name="take_id" />
+    </Key>
+    <Property Name="book_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="issue_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="due_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="take_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Library" Relationship="Self.FK_Takes_ToTable_1" FromRole="Takes" ToRole="Library" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_Takes_ToTable" FromRole="Takes" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="User_Canteen">
+    <Key>
+      <PropertyRef Name="user_canteen_id" />
+    </Key>
+    <Property Name="user_canteen_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="canteen_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Canteen" Relationship="Self.FK_User_Canteen_ToTable_1" FromRole="User_Canteen" ToRole="Canteen" />
+    <NavigationProperty Name="UserDb" Relationship="Self.FK_User_Canteen_ToTable" FromRole="User_Canteen" ToRole="UserDb" />
+  </EntityType>
+  <EntityType Name="UserDb">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dob" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mobileno" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pcode" Type="Decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="state" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Allocateds" Relationship="Self.FK_Allocated_ToTable" FromRole="UserDb" ToRole="Allocated" />
+    <NavigationProperty Name="Complaints" Relationship="Self.FK_Complaint_ToTable" FromRole="UserDb" ToRole="Complaint" />
+    <NavigationProperty Name="Expenses" Relationship="Self.FK_Expense_ToTable" FromRole="UserDb" ToRole="Expense" />
+    <NavigationProperty Name="Laundries" Relationship="Self.FK_Laundry_ToTable" FromRole="UserDb" ToRole="Laundry" />
+    <NavigationProperty Name="LoginDbs" Relationship="Self.FK_LoginDb_ToTable_1" FromRole="UserDb" ToRole="LoginDb" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK_Payment_ToTable" FromRole="UserDb" ToRole="Payment" />
+    <NavigationProperty Name="Penalties" Relationship="Self.FK_Penalty_ToTable" FromRole="UserDb" ToRole="Penalty" />
+    <NavigationProperty Name="Takes" Relationship="Self.FK_Takes_ToTable" FromRole="UserDb" ToRole="Takes" />
+    <NavigationProperty Name="User_Canteen" Relationship="Self.FK_User_Canteen_ToTable" FromRole="UserDb" ToRole="User_Canteen" />
+  </EntityType>
+  <Association Name="FK_Allocated_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Allocated" Type="Self.Allocated" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Allocated">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Allocated_ToTable_1">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Allocated" Type="Self.Allocated" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="room_no" />
+      </Principal>
+      <Dependent Role="Allocated">
+        <PropertyRef Name="room_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Canteen_ToTable_1">
+    <End Role="Canteen" Type="Self.Canteen" Multiplicity="1" />
+    <End Role="User_Canteen" Type="Self.User_Canteen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canteen">
+        <PropertyRef Name="item_id" />
+      </Principal>
+      <Dependent Role="User_Canteen">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complaint_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Complaint" Type="Self.Complaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Complaint">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Expense_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Expense" Type="Self.Expense" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Expense">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Laundry_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Laundry" Type="Self.Laundry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Laundry">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Takes_ToTable_1">
+    <End Role="Library" Type="Self.Library" Multiplicity="1" />
+    <End Role="Takes" Type="Self.Take" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Library">
+        <PropertyRef Name="book_id" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginDb_ToTable">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="LoginDb" Type="Self.LoginDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="roleid" />
+      </Principal>
+      <Dependent Role="LoginDb">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoginDb_ToTable_1">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="LoginDb" Type="Self.LoginDb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="LoginDb">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Penalty_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Penalty" Type="Self.Penalty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Penalty">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Takes_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="Takes" Type="Self.Take" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Takes">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Canteen_ToTable">
+    <End Role="UserDb" Type="Self.UserDb" Multiplicity="1" />
+    <End Role="User_Canteen" Type="Self.User_Canteen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="User_Canteen">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1Entities16" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Allocateds" EntityType="Self.Allocated" />
+    <EntitySet Name="Canteens" EntityType="Self.Canteen" />
+    <EntitySet Name="Complaints" EntityType="Self.Complaint" />
+    <EntitySet Name="Expenses" EntityType="Self.Expense" />
+    <EntitySet Name="Hostels" EntityType="Self.Hostel" />
+    <EntitySet Name="Laundries" EntityType="Self.Laundry" />
+    <EntitySet Name="Libraries" EntityType="Self.Library" />
+    <EntitySet Name="LoginDbs" EntityType="Self.LoginDb" />
+    <EntitySet Name="MessMenus" EntityType="Self.MessMenu" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Penalties" EntityType="Self.Penalty" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
+    <EntitySet Name="Takes" EntityType="Self.Take" />
+    <EntitySet Name="User_Canteen" EntityType="Self.User_Canteen" />
+    <EntitySet Name="UserDbs" EntityType="Self.UserDb" />
+    <AssociationSet Name="FK_Allocated_ToTable" Association="Self.FK_Allocated_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Allocated" EntitySet="Allocateds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Allocated_ToTable_1" Association="Self.FK_Allocated_ToTable_1">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="Allocated" EntitySet="Allocateds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Canteen_ToTable_1" Association="Self.FK_User_Canteen_ToTable_1">
+      <End Role="Canteen" EntitySet="Canteens" />
+      <End Role="User_Canteen" EntitySet="User_Canteen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complaint_ToTable" Association="Self.FK_Complaint_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Complaint" EntitySet="Complaints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Expense_ToTable" Association="Self.FK_Expense_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Expense" EntitySet="Expenses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Laundry_ToTable" Association="Self.FK_Laundry_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Laundry" EntitySet="Laundries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Takes_ToTable_1" Association="Self.FK_Takes_ToTable_1">
+      <End Role="Library" EntitySet="Libraries" />
+      <End Role="Takes" EntitySet="Takes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginDb_ToTable" Association="Self.FK_LoginDb_ToTable">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="LoginDb" EntitySet="LoginDbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoginDb_ToTable_1" Association="Self.FK_LoginDb_ToTable_1">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="LoginDb" EntitySet="LoginDbs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_ToTable" Association="Self.FK_Payment_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Penalty_ToTable" Association="Self.FK_Penalty_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Penalty" EntitySet="Penalties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Takes_ToTable" Association="Self.FK_Takes_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="Takes" EntitySet="Takes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Canteen_ToTable" Association="Self.FK_User_Canteen_ToTable">
+      <End Role="UserDb" EntitySet="UserDbs" />
+      <End Role="User_Canteen" EntitySet="User_Canteen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

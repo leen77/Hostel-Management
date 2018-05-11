@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Hostel.master.cs" Inherits="ProjectHMS.Hostel1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>    </title>
+    <link href="Styles/Style1.css" rel="stylesheet" type="text/css"/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <div class="menu">
+            <ul>
+              <li><a href="UserHome.aspx">Home</a></li>
+               <li><a href="ViewExpense.aspx">Expense</a></li>
+                <li><a href="DisplayMenu.aspx">Today's Menu</a></li>
+                <li><a href="Aboutus.aspx">About us</a></li>
+                <li><a href="Contactus.aspx">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        <div class="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+         </div>
+        <div class="clear"></div>
+        <div class="footer">
+           <h2> @Copyright(C) DDU 1990-2017</h2>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

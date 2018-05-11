@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.header{
+    background-color:skyblue;
+}
+.header img {
+  float: left;
+  
+}
+
+.header h2 {
+  position: relative;
+  top: 18px;
+   text-align:center;
+  
+}
